@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/media/aditikh22/HP USB20FD/CS220/Lab1_2/full_adder_schematic/full_adder_sch_full_adder_sch_sch_tb_isim_beh.exe" -prj "/media/aditikh22/HP USB20FD/CS220/Lab1_2/full_adder_schematic/full_adder_sch_full_adder_sch_sch_tb_beh.prj" "work.full_adder_sch_full_adder_sch_sch_tb" "work.glbl" 
