@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Jan 31 15:43:33 2024
+# Process ID: 224216
+# Log file: /media/aditikh22/HP USB20FD/CS220/Lab3_2/wrap/planAhead_run_1/planAhead.log
+# Journal file: /media/aditikh22/HP USB20FD/CS220/Lab3_2/wrap/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {/media/aditikh22/HP USB20FD/CS220/Lab3_2/wrap/pa.fromHdl.tcl}
+update_compile_order -fileset sim_1

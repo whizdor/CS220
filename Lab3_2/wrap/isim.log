@@ -1,0 +1,37 @@
+ISim log file
+Running: /media/mahaarajan/HP USB20FD/CS220/Lab3_2/wrap/wrap_top_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /media/mahaarajan/HP USB20FD/CS220/Lab3_2/wrap/wrap_top_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+time:                   0, config: 00000001
+Finished circuit initialization process.
+time:                  38, config: 00000010
+time:                  82, config: 00000100
+time:                 126, config: 00001000
+time:                 170, config: 00010000
+time:                 214, config: 00100000
+time:                 258, config: 01000000
+time:                 302, config: 10000000
+time:                 346, config: 00000001
+time:                 390, config: 00000010
+time:                 434, config: 00000100
+time:                 478, config: 00001000
+time:                 522, config: 00010000
+time:                 566, config: 00100000
+time:                 610, config: 01000000
+time:                 654, config: 10000000
+time:                 698, config: 00000001
+time:                 742, config: 00000010
+time:                 786, config: 00000100
+time:                 830, config: 00001000
+time:                 874, config: 00010000
+time:                 918, config: 00100000
+time:                 962, config: 01000000
+# exit 0

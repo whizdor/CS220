@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Jan 31 16:16:39 2024
+# Process ID: 230153
+# Log file: /media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/planAhead_run_2/planAhead.log
+# Journal file: /media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/pa.fromHdl.tcl}
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin V16 [get_ports ROT_SWITCH]
+endgroup
+set_property iostandard LVTTL [get_ports [list PB1]]
+set_property iostandard LVTTL [get_ports [list PB2]]
+set_property iostandard LVTTL [get_ports [list PB3]]
+set_property iostandard LVTTL [get_ports [list PB4]]
+set_property pulltype PULLDOWN [get_ports [list PB1]]
+set_property pulltype PULLDOWN [get_ports [list PB2]]
+set_property pulltype PULLDOWN [get_ports [list PB3]]
+set_property pulltype PULLDOWN [get_ports [list PB4]]
+set_property pulltype PULLUP [get_ports [list {t[3]} {t[2]} {t[1]} {t[0]}]]
+set_property pulltype PULLDOWN [get_ports [list ROT_SWITCH]]
+set_property iostandard LVTTL [get_ports [list ROT_SWITCH]]
+save_constraints

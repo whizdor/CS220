@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Jan 31 16:24:44 2024
+# Process ID: 231428
+# Log file: /media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/planAhead_run_3/planAhead.log
+# Journal file: /media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/planAhead_run_3/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source {/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/pa.fromHdl.tcl}
+# create_project -name fiveadder -dir "/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/planAhead_run_3" -part xc3s500efg320-4
+ERROR: [Common 17-53] User Exception: Project already exists on disk, please use '-force' option to overwrite: 
+     /media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/planAhead_run_3/fiveadder.ppr
+     /media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/planAhead_run_3/fiveadder.data
+
+    while executing
+"create_project -name fiveadder -dir "/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/planAhead_run_3" -part xc3s500efg320-4"
+    (file "/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/pa.fromHdl.tcl" line 4)
+exit
+INFO: [Common 17-206] Exiting PlanAhead at Wed Jan 31 16:25:09 2024...
+INFO: [Common 17-83] Releasing license: PlanAhead

@@ -1,0 +1,29 @@
+Command line:
+   fiveadder_top_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  40681
+
+Fri Feb  2 15:07:30 2024
+
+
+ Elaboration Time: 0.02 sec
+
+ Current Memory Usage: 183.501 Meg
+
+ Total Signals          : 146
+ Total Nets             : 86
+ Total Signal Drivers   : 58
+ Total Blocks           : 26
+ Total Primitive Blocks : 20
+ Total Processes        : 66
+ Total Traceable Variables  : 29
+ Total Scalar Nets and Variables : 195
+Total Line Count : 94
+
+ Total Simulation Time: 0.04 sec
+
+ Current Memory Usage: 259.002 Meg
+
+Fri Feb  2 15:07:46 2024
+

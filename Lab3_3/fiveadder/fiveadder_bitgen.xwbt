@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/fiveadder.ncd
+OUTFILE=/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/fiveadder.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder
+LICENSE=WebPack
+USER_INFO=212889031_0_0_039

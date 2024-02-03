@@ -1,0 +1,27 @@
+ISim log file
+Running: /media/aditikh22/HP USB20FD/CS220/Lab2_1/two_bit_adder/two_bit_adder_top_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /media/aditikh22/HP USB20FD/CS220/Lab2_1/two_bit_adder/two_bit_adder_top_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+WARNING:  For instance ADDER/FA0/, width 1 of formal port cin is not equal to width 32 of actual constant.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+<                   0>: Input_A = 01, Input_B = 01, Sum = xx, Carry = x
+<                   0>: Input_A = 01, Input_B = 01, Sum = 10, Carry = 0
+Finished circuit initialization process.
+
+
+<                   1>: Input_A = 11, Input_B = 11, Sum = 10, Carry = 0
+<                   1>: Input_A = 11, Input_B = 11, Sum = 10, Carry = 1
+
+
+<                   2>: Input_A = 10, Input_B = 01, Sum = 10, Carry = 1
+<                   2>: Input_A = 10, Input_B = 01, Sum = 11, Carry = 0
+
+
+# exit 0

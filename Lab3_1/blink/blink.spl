@@ -1,0 +1,8 @@
+[Inputs]
+clk
+[Outputs]
+q
+[BiDir]
+[ATTRIBUTES]
+VeriModel blink
+

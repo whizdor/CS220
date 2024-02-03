@@ -1,0 +1,20 @@
+Release 14.7 - netgen P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis
+-ofmt verilog -sim seven_bit_adder.ngc seven_bit_adder_synthesis.v  
+
+Reading design 'seven_bit_adder.ngc' ...
+Flattening design ...
+Processing design ... 
+  Preping design's networks ...
+  Preping design's macros ...
+Writing Verilog netlist file '/media/aditikh22/HP
+USB20FD/CS220/Lab2_2/seven_bit_adder/netgen/synthesis/seven_bit_adder_synthesis.
+v' ...
+INFO:NetListWriters:633 - The generated Verilog netlist contains Xilinx UNISIM
+   simulation primitives and has to be used with UNISIM simulation library for
+   correct compilation and simulation. 
+Number of warnings: 0
+Number of info messages: 1
+Total memory usage is 302632 kilobytes

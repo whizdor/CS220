@@ -1,0 +1,13 @@
+
+
+NET "clk" LOC = C9;
+
+
+NET "clk" IOSTANDARD = LVCMOS33;
+NET "q" IOSTANDARD = LVTTL;
+NET "q" DRIVE = 8;
+
+# PlanAhead Generated physical constraints 
+
+NET "q" LOC = F12;
+NET "clk" PERIOD = 20.0ns HIGH 50%;

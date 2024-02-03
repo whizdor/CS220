@@ -1,0 +1,4 @@
+verilog isim_temp "fulladder.v"
+verilog isim_temp "fiveadder.v"
+verilog isim_temp "fiveadder_top.v"
+verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

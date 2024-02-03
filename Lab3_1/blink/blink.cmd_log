@@ -1,0 +1,24 @@
+vhdtdtfi -lib work {/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.v} -lang verilog -prj blink -o blink.spl -module blink -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e blink.spl {/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.sym} 
+vhdtdtfi -lib work {/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.v} -lang verilog -prj blink -o blink.spl -module blink -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e blink.spl {/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.sym} 
+vhdtdtfi -lib work {/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.v} -lang verilog -prj blink -o blink.spl -module blink -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e blink.spl {/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.sym} 
+vhdtdtfi -lib work {/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.v} -lang verilog -prj blink -o blink.spl -module blink -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e blink.spl {/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.sym} 
+vhdtdtfi -lib work {/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.v} -lang verilog -prj blink -o blink.spl -module blink -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e blink.spl {/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.sym} 
+xst -intstyle ise -ifn "/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.xst" -ofn "/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 "blink.ngc" blink.ngd  
+xst -intstyle ise -ifn "/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.xst" -ofn "/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc blink.ucf -p xc3s500e-fg320-4 "blink.ngc" blink.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o blink_map.ncd blink.ngd blink.pcf 
+par -w -intstyle ise -ol high -t 1 blink_map.ncd blink.ncd blink.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml blink.twx blink.ncd -o blink.twr blink.pcf -ucf blink.ucf 
+bitgen -intstyle ise -f blink.ut blink.ncd 
+xst -intstyle ise -ifn "/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.xst" -ofn "/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/blink.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc blink.ucf -p xc3s500e-fg320-4 "blink.ngc" blink.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o blink_map.ncd blink.ngd blink.pcf 
+par -w -intstyle ise -ol high -t 1 blink_map.ncd blink.ncd blink.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml blink.twx blink.ncd -o blink.twr blink.pcf -ucf blink.ucf 
+bitgen -intstyle ise -f blink.ut blink.ncd 

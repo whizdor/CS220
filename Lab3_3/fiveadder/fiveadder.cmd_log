@@ -1,0 +1,14 @@
+xst -intstyle ise -ifn "/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/fiveadder.xst" -ofn "/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/fiveadder.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/fiveadder.xst" -ofn "/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/fiveadder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fiveadder.ucf -p xc3s500e-fg320-4 "fiveadder.ngc" fiveadder.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o fiveadder_map.ncd fiveadder.ngd fiveadder.pcf 
+par -w -intstyle ise -ol high -t 1 fiveadder_map.ncd fiveadder.ncd fiveadder.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml fiveadder.twx fiveadder.ncd -o fiveadder.twr fiveadder.pcf -ucf fiveadder.ucf 
+bitgen -intstyle ise -f fiveadder.ut fiveadder.ncd 
+xst -intstyle ise -ifn "/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/fiveadder.xst" -ofn "/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/fiveadder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fiveadder.ucf -p xc3s500e-fg320-4 "fiveadder.ngc" fiveadder.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fiveadder.ucf -p xc3s500e-fg320-4 "fiveadder.ngc" fiveadder.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o fiveadder_map.ncd fiveadder.ngd fiveadder.pcf 
+par -w -intstyle ise -ol high -t 1 fiveadder_map.ncd fiveadder.ncd fiveadder.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml fiveadder.twx fiveadder.ncd -o fiveadder.twr fiveadder.pcf -ucf fiveadder.ucf 
+bitgen -intstyle ise -f fiveadder.ut fiveadder.ncd 

@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Jan 31 15:23:43 2024
+# Process ID: 221013
+# Log file: /media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/planAhead_run_2/planAhead.log
+# Journal file: /media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {/media/aditikh22/HP USB20FD/CS220/Lab3_1/blink/pa.fromHdl.tcl}
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+set_property package_pin "" [get_ports [list  q]]
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+set_property iostandard LVTTL [get_ports [list q]]
+set_property drive 8 [get_ports [list q]]
+save_constraints

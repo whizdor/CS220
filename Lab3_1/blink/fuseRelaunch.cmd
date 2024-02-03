@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/media/mahaarajan/HP USB20FD/CS220/Lab3_1/blink/blink_top_isim_beh.exe" -prj "/media/mahaarajan/HP USB20FD/CS220/Lab3_1/blink/blink_top_beh.prj" "work.blink_top" "work.glbl" 

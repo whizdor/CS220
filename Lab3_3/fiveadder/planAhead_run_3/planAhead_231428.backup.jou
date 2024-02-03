@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Jan 31 16:24:43 2024
+# Process ID: 231404
+# Log file: /media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/planAhead_run_3/planAhead.log
+# Journal file: /media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/planAhead_run_3/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {/media/aditikh22/HP USB20FD/CS220/Lab3_3/fiveadder/pa.fromHdl.tcl}
+update_compile_order -fileset sim_1
+refresh_design
+startgroup
+set_property package_pin E9 [get_ports cout]
+endgroup
+save_constraints
