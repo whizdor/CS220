@@ -1,0 +1,66 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x159607640 .scope module, "LCD_Driver" "LCD_Driver" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "b";
+v0x1596077b0_0 .var "LCD_E", 0 0;
+v0x15961bbe0_0 .var "LCD_RS", 0 0;
+v0x15961bc80_0 .var "LCD_W", 0 0;
+o0x1600400a0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x15961bd10_0 .net "a", 0 0, o0x1600400a0;  0 drivers
+o0x1600400d0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x15961bdb0_0 .net "b", 0 0, o0x1600400d0;  0 drivers
+v0x15961be90_0 .var "data", 3 0;
+    .scope S_0x159607640;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1596077b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x15961bbe0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x15961bc80_0, 0, 1;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x15961be90_0, 0, 4;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1596077b0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1596077b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x15961bbe0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x15961bc80_0, 0, 1;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x15961be90_0, 0, 4;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1596077b0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1596077b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x15961bbe0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x15961bc80_0, 0, 1;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x15961be90_0, 0, 4;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1596077b0_0, 0, 1;
+    %delay 20, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "LCD_Driver.v";

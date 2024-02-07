@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+// `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -112,6 +112,7 @@ module fiveadder (PB1, PB2, PB3, PB4, ROT_SWITCH, t, sum, cout);
    wire [5:0] sum;
    output cout;
    wire cout;
+   assign sum = 1'b0;
 	
 	always@ (posedge PB1) begin
 		a[3:0] = t[3:0];
