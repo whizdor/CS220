@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module LCD_Driver_main(first_line, second_line, clk, LCD_E, LCD_W, LCD_RS, data);
+module LCD_Driver(first_line, second_line, clk, LCD_E, LCD_W, LCD_RS, data);
 
     //Input
     input [127:0] second_line;
