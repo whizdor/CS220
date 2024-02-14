@@ -49,55 +49,69 @@ module fiveadder_top;
 		.cout(cout)
 	);
 
+    reg [3:0] a1,a2,a3,a4,a5;
+
 	initial begin
         t=0;
 		PB1=1;
         PB2=0;
         PB3=0;
         PB4=0;
-		ROT_SWITCH = 1;
+		ROT_SWITCH = 0;
 	end
 
 	always begin
-        #5;
         PB1=~PB1;
-        #15;
+        #25;
         PB1=~PB1;
     end
 
     always begin
         #5;
         PB2=~PB2;
-        #5;
+        #20;
         PB2=~PB2;
-        #10;
     end
 
     always begin
         #10;
         PB3=~PB3;
-        #5;
+        #15;
         PB3=~PB3;
-        #5;
     end
 
     always begin
         #15;
         PB4=~PB4;
-        #5;
+        #10;
         PB4=~PB4;
+    end
+
+    always begin
+        #20;
+        ROT_SWITCH=~ROT_SWITCH;
+        #5;
+        ROT_SWITCH=~ROT_SWITCH;
     end
 
 	always begin
         for(integer i=1;i<16;i++) begin
             #5;
-            t=i;
+            t = i;
+            for(integer j=1;j<16;j++) begin
+                #5;
+                t = j;
+                for(integer k=1;k<16;k++) begin
+                    #5;
+                    t = k;
+                end
+            end
         end
     end
 
     always begin
         #26;
-        $display("%b %b %b %b %d %b %d",PB1,PB2,PB3,PB4,t,sum,cout);
+        $display("%b %b %b %b %b %d %d %d",PB1,PB2,PB3,PB4,ROT_SWITCH,t,sum,cout);
     end
 
     initial begin
@@ -105,39 +119,4 @@ module fiveadder_top;
         $finish;
     end
 
-// 	initial begin
-// 		// Initialize Inputs
-// 		PB1 = 0;
-// 		PB2 = 0;
-// 		PB3 = 0;
-// 		PB4 = 0;
-// 		ROT_SWITCH = 0;
-// 		t = 0;
-// 		#10
-// 		t<=4'b1111;
-// 		#4
-// 		PB1<=1'b1;
-// 		#2
-// 		t<= 4'b1111;
-// 		#2
-// 		PB2<=1'b1;
-// 		#2
-// 		t<= 4'b1111;
-// 		#2
-// 		PB3<=1'b1;
-// 		#2
-// 		t<= 4'b1111;
-// 		#2
-// 		PB4<=1'b1;
-// 		#2
-// 		t<= 4'b1111;
-// 		#2
-// 		ROT_SWITCH<=1'b1;
-// 		#2
-// 		$finish;
-// 	end
-// 	always @(sum,cout) begin
-// 	$display("The sum is %b. Carry is %b. time %d ",sum,cout,$time);
-//    end
 endmodule
-
