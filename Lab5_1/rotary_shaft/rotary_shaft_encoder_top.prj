@@ -1,0 +1,3 @@
+verilog work "rotary_shaft_encoder.v"
+verilog work "rotary_shaft.v"
+verilog work "rotary_shaft_encoder_top.v"

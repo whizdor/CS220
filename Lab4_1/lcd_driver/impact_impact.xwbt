@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/impact.xsl
+OUTFILE=/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver
+LICENSE=iMPACT
+USER_INFO=iMPACT

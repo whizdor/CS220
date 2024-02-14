@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.ncd
+OUTFILE=/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver
+LICENSE=WebPack
+USER_INFO=212889031_0_0_039

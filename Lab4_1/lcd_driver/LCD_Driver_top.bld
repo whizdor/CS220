@@ -1,0 +1,37 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -nt timestamp -uc LCD_Driver_top.ucf -p xc3s500e-fg320-4
+LCD_Driver_top.ngc LCD_Driver_top.ngd
+
+Reading NGO file
+"/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "LCD_Driver_top.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 381948 kilobytes
+
+Writing NGD file "LCD_Driver_top.ngd" ...
+Total REAL time to NGDBUILD completion:  7 sec
+Total CPU time to NGDBUILD completion:   5 sec
+
+Writing NGDBUILD log file "LCD_Driver_top.bld"...

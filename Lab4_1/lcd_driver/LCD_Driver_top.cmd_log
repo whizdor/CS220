@@ -1,0 +1,48 @@
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LCD_Driver_top.ucf -p xc3s500e-fg320-4 LCD_Driver_top.ngc LCD_Driver_top.ngd  
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LCD_Driver_top.ucf -p xc3s500e-fg320-4 LCD_Driver_top.ngc LCD_Driver_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o LCD_Driver_top_map.ncd LCD_Driver_top.ngd LCD_Driver_top.pcf 
+par -w -intstyle ise -ol high -t 1 LCD_Driver_top_map.ncd LCD_Driver_top.ncd LCD_Driver_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml LCD_Driver_top.twx LCD_Driver_top.ncd -o LCD_Driver_top.twr LCD_Driver_top.pcf -ucf LCD_Driver_top.ucf 
+bitgen -intstyle ise -f LCD_Driver_top.ut LCD_Driver_top.ncd 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LCD_Driver_top.ucf -p xc3s500e-fg320-4 LCD_Driver_top.ngc LCD_Driver_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o LCD_Driver_top_map.ncd LCD_Driver_top.ngd LCD_Driver_top.pcf 
+par -w -intstyle ise -ol high -t 1 LCD_Driver_top_map.ncd LCD_Driver_top.ncd LCD_Driver_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml LCD_Driver_top.twx LCD_Driver_top.ncd -o LCD_Driver_top.twr LCD_Driver_top.pcf -ucf LCD_Driver_top.ucf 
+bitgen -intstyle ise -f LCD_Driver_top.ut LCD_Driver_top.ncd 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LCD_Driver_top.ucf -p xc3s500e-fg320-4 LCD_Driver_top.ngc LCD_Driver_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o LCD_Driver_top_map.ncd LCD_Driver_top.ngd LCD_Driver_top.pcf 
+par -w -intstyle ise -ol high -t 1 LCD_Driver_top_map.ncd LCD_Driver_top.ncd LCD_Driver_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml LCD_Driver_top.twx LCD_Driver_top.ncd -o LCD_Driver_top.twr LCD_Driver_top.pcf -ucf LCD_Driver_top.ucf 
+bitgen -intstyle ise -f LCD_Driver_top.ut LCD_Driver_top.ncd 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LCD_Driver_top.ucf -p xc3s500e-fg320-4 LCD_Driver_top.ngc LCD_Driver_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o LCD_Driver_top_map.ncd LCD_Driver_top.ngd LCD_Driver_top.pcf 
+par -w -intstyle ise -ol high -t 1 LCD_Driver_top_map.ncd LCD_Driver_top.ncd LCD_Driver_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml LCD_Driver_top.twx LCD_Driver_top.ncd -o LCD_Driver_top.twr LCD_Driver_top.pcf -ucf LCD_Driver_top.ucf 
+bitgen -intstyle ise -f LCD_Driver_top.ut LCD_Driver_top.ncd 
+xst -intstyle ise -ifn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.xst" -ofn "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/LCD_Driver_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc LCD_Driver_top.ucf -p xc3s500e-fg320-4 LCD_Driver_top.ngc LCD_Driver_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o LCD_Driver_top_map.ncd LCD_Driver_top.ngd LCD_Driver_top.pcf 
+par -w -intstyle ise -ol high -t 1 LCD_Driver_top_map.ncd LCD_Driver_top.ncd LCD_Driver_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml LCD_Driver_top.twx LCD_Driver_top.ncd -o LCD_Driver_top.twr LCD_Driver_top.pcf -ucf LCD_Driver_top.ucf 
+bitgen -intstyle ise -f LCD_Driver_top.ut LCD_Driver_top.ncd 

@@ -1,0 +1,3 @@
+MO rotary_shaft NULL rotary_shaft.v vlg52/rotary__shaft.bin 1707906018
+MO rotary_shaft_encoder NULL rotary_shaft_encoder.v vlg2D/rotary__shaft__encoder.bin 1707906018
+MO rotary_shaft_encoder_top NULL rotary_shaft_encoder_top.v vlg2F/rotary__shaft__encoder__top.bin 1707906019

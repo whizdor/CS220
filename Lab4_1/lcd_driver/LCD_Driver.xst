@@ -1,0 +1,5 @@
+set -tmpdir "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/xst/projnav.tmp"
+set -xsthdpdir "/media/aditikh22/KUSHAGRA/Lab4_1/lcd_driver/xst"
+elaborate
+-ifn LCD_Driver.prj
+-ifmt mixed

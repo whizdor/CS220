@@ -1,0 +1,8 @@
+Release 14.7 Drc P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Wed Feb 14 15:51:42 2024
+
+drc -z rotary_shaft_encoder_top.ncd rotary_shaft_encoder_top.pcf
+
+DRC detected 0 errors and 0 warnings.
