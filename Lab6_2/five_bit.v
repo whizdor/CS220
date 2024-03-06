@@ -1,9 +1,9 @@
 module seven_adder(clk, ROT_A, ROT_B, inp, answer, overflow);
     input clk, ROT_A, ROT_B;
     input [3:0] inp;
-    output [6:0] answer;
+    output [4:0] answer;
     output overflow;
-    wire [6:0] answer;
+    wire [4:0] answer;
     wire overflow;
 
     reg [6:0] a,b;
