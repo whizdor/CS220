@@ -1,58 +1,42 @@
-module seven_adder(clk, ROT_A, ROT_B, inp, answer, overflow);
-    input clk, ROT_A, ROT_B;
-    input [3:0] inp;
-    output [4:0] answer;
-    output overflow;
-    wire [4:0] answer;
-    wire overflow;
+module five_bit_adder_subtractor(x,y,num,sum_x,sum_y)
+    input [3:0] x,y;
+    output [4:0] sum_x,sum_y;
+    wire [4:0] sum_x.sum_y;
 
-    reg [6:0] a,b;
-    reg operation;
-    reg overflow;
+    wire op;
+    reg[1:0] addx_r, addy_r;
+    wire[1:0] addx,addy;
+    wire[4:0] coutx, couty;
 
-    wire rotation_event;
-    reg prev_rotation_event = 1;
-    reg [2:0] count;
-    count = 3'b000;
-
-    //intitalise rotation event
-    rotary_shaft shaft(clk, ROT_A, ROT_B, rotation_event);
-    
-    always @(posedge clk) begin
-        if(prev_rotation_event == 0 & rotation_event == 1) begin
-            if(count == 3'b000) begin
-                a[3:0] <= inp[3:0];
-                count <= 3'b001;
-            end
-            else if (count == 3'b001) begin
-                a[6:4] <= inp[2:0];
-                count <= 3'b010;
-            end
-            else if (count == 3'b010) begin
-                b[3:0] <= inp[3:0];
-                count <= 3'b011;
-            end
-            else if (count == 3'b011) begin
-                b[6:4] <= inp[2:0];
-                count <= 3'b100;
-            end
-            else if (count == 3'b100) begin
-                operation <= inp[0];
-                count <= 3'b101;
-            end
+    assign op = num[1];
+    always begin
+        if(num[2] == 0) begin
+            addx_r <= {0,0};
+            addy_r <= {num[3],num[2]};
         end
-        prev_rotation_event <= rotation_event;
+        elseif (num[2] == 1) begin
+            addy_r <= {0,0};
+            addx_r <= {num[3],num[2]};
+        end
     end
 
-    reg [6:0] c_intermediate;
-    full_operator FO1(a[0],b[0],operation,operation,answer[0],c_intermediate[0]);
-    full_operator FO2(a[1],b[1],operation,c_intermediate[0],answer[1],c_intermediate[1]);
-    full_operator FO3(a[2],b[2],operation,c_intermediate[1],answer[2],c_intermediate[2]);
-    full_operator FO4(a[3],b[3],operation,c_intermediate[2],answer[3],c_intermediate[3]);
-    full_operator FO5(a[4],b[4],operation,c_intermediate[3],answer[4],c_intermediate[4]);
-    full_operator FO6(a[5],b[5],operation,c_intermediate[4],answer[5],c_intermediate[5]);
-    full_operator FO7(a[6],b[6],operation,c_intermediate[5],answer[6],c_intermediate[6]);
+    assign addx = addx_r;
+    assign addy = addy_r;
 
-    assign overflow = ~(c_intermediate[6] & c_intermediate[5]);
+    full_operator FA0(x[0],addx[0],op, op,sum_x[0], coutx[0]);
+    full_operator FA1(x[1],addx[1],coutx[0], op,sum_x[1], coutx[1]);
+    full_operator FA2(x[2],1'b0,coutx[1], op,sum_x[2], coutx[2]);
+    full_operator FA3(x[3],1'b0,coutx[2], op,sum_x[3], coutx[3]);
+    full_operator FA4(1'b0,1'b0,coutx[3], op,sum_x[4], coutx[4]);
+
+
+    full_operator FA5(x[0],addx[0],op, op,sum_x[0], coutx[0]);
+    full_operator FA6(x[1],addx[1],coutx[0], op,sum_x[1], coutx[1]);
+    full_operator FA7(x[2],1'b0,coutx[1], op,sum_x[2], coutx[2]);
+    full_operator FA8(x[3],1'b0,coutx[2], op,sum_x[3], coutx[3]);
+    full_operator FA9(1'b0,1'b0,coutx[3], op,sum_x[4], coutx[4]);
+
+
+
 
 endmodule

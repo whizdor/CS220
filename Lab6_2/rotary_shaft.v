@@ -1,23 +1,3 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    14:55:35 02/14/2024 
-// Design Name: 
-// Module Name:    rotary_shaft 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
 module rotary_shaft(clk, ROT_A, ROT_B, rotation_event);
     //Inputs
     input clk, ROT_A, ROT_B;

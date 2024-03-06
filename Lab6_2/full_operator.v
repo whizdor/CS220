@@ -11,6 +11,6 @@ module full_operator(a,b,operation,cin,sum,cout);
 	wire cout;
 
 	assign sum = a^(b^operation)^cin;
-	assign cout = (a&b) | ((b^operation)&cin) | (cin&a);
+	assign cout = (a&(b^operation)) | ((b^operation)&cin) | (cin&a);
 
 endmodule
