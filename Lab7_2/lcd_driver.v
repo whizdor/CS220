@@ -1,23 +1,4 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    14:04:14 02/14/2024 
-// Design Name: 
-// Module Name:    lcd_driver 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module lcd_driver(
 	first_line,
 	second_line,
@@ -43,7 +24,7 @@ module lcd_driver(
 	reg [7:0] second_line_index = 0;
 	reg [1:0] second_line_state = 3;
 	 
-	reg [19:0] counter = 1_000_000;
+	reg [31:0] counter = 500000000;
 	reg [2:0] next_state = 0;
 	 
 	reg [2:0] line_break_state = 7;
