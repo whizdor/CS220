@@ -1,3 +1,23 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    14:44:28 03/06/2024 
+// Design Name: 
+// Module Name:    five_bit_operator 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module five_bit_adder_subtractor(x,y,num,sum_x,sum_y)
     input [3:0] x,y;
     output [4:0] sum_x,sum_y;

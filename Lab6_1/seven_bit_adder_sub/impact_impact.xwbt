@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/users/btech/aditikh22/seven_bit_adder_sub/impact.xsl
+OUTFILE=/users/btech/aditikh22/seven_bit_adder_sub/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/users/btech/aditikh22/seven_bit_adder_sub
+LICENSE=iMPACT
+USER_INFO=iMPACT

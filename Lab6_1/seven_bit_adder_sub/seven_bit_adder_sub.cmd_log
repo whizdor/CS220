@@ -1,0 +1,39 @@
+xst -intstyle ise -ifn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.xst" -ofn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.syr" 
+xst -intstyle ise -ifn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.xst" -ofn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.syr" 
+xst -intstyle ise -ifn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.xst" -ofn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seven_bit_adder_sub.ucf -p xc3s500e-fg320-4 seven_bit_adder_sub.ngc seven_bit_adder_sub.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o seven_bit_adder_sub_map.ncd seven_bit_adder_sub.ngd seven_bit_adder_sub.pcf 
+par -w -intstyle ise -ol high -t 1 seven_bit_adder_sub_map.ncd seven_bit_adder_sub.ncd seven_bit_adder_sub.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seven_bit_adder_sub.twx seven_bit_adder_sub.ncd -o seven_bit_adder_sub.twr seven_bit_adder_sub.pcf -ucf seven_bit_adder_sub.ucf 
+bitgen -intstyle ise -f seven_bit_adder_sub.ut seven_bit_adder_sub.ncd 
+xst -intstyle ise -ifn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.xst" -ofn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seven_bit_adder_sub.ucf -p xc3s500e-fg320-4 seven_bit_adder_sub.ngc seven_bit_adder_sub.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o seven_bit_adder_sub_map.ncd seven_bit_adder_sub.ngd seven_bit_adder_sub.pcf 
+par -w -intstyle ise -ol high -t 1 seven_bit_adder_sub_map.ncd seven_bit_adder_sub.ncd seven_bit_adder_sub.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seven_bit_adder_sub.twx seven_bit_adder_sub.ncd -o seven_bit_adder_sub.twr seven_bit_adder_sub.pcf -ucf seven_bit_adder_sub.ucf 
+bitgen -intstyle ise -f seven_bit_adder_sub.ut seven_bit_adder_sub.ncd 
+xst -intstyle ise -ifn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.xst" -ofn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seven_bit_adder_sub.ucf -p xc3s500e-fg320-4 seven_bit_adder_sub.ngc seven_bit_adder_sub.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o seven_bit_adder_sub_map.ncd seven_bit_adder_sub.ngd seven_bit_adder_sub.pcf 
+par -w -intstyle ise -ol high -t 1 seven_bit_adder_sub_map.ncd seven_bit_adder_sub.ncd seven_bit_adder_sub.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seven_bit_adder_sub.twx seven_bit_adder_sub.ncd -o seven_bit_adder_sub.twr seven_bit_adder_sub.pcf -ucf seven_bit_adder_sub.ucf 
+bitgen -intstyle ise -f seven_bit_adder_sub.ut seven_bit_adder_sub.ncd 
+xst -intstyle ise -ifn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.xst" -ofn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seven_bit_adder_sub.ucf -p xc3s500e-fg320-4 seven_bit_adder_sub.ngc seven_bit_adder_sub.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o seven_bit_adder_sub_map.ncd seven_bit_adder_sub.ngd seven_bit_adder_sub.pcf 
+par -w -intstyle ise -ol high -t 1 seven_bit_adder_sub_map.ncd seven_bit_adder_sub.ncd seven_bit_adder_sub.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seven_bit_adder_sub.twx seven_bit_adder_sub.ncd -o seven_bit_adder_sub.twr seven_bit_adder_sub.pcf -ucf seven_bit_adder_sub.ucf 
+bitgen -intstyle ise -f seven_bit_adder_sub.ut seven_bit_adder_sub.ncd 
+xst -intstyle ise -ifn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.xst" -ofn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.syr" 
+xst -intstyle ise -ifn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.xst" -ofn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seven_bit_adder_sub.ucf -p xc3s500e-fg320-4 seven_bit_adder_sub.ngc seven_bit_adder_sub.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o seven_bit_adder_sub_map.ncd seven_bit_adder_sub.ngd seven_bit_adder_sub.pcf 
+par -w -intstyle ise -ol high -t 1 seven_bit_adder_sub_map.ncd seven_bit_adder_sub.ncd seven_bit_adder_sub.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seven_bit_adder_sub.twx seven_bit_adder_sub.ncd -o seven_bit_adder_sub.twr seven_bit_adder_sub.pcf -ucf seven_bit_adder_sub.ucf 
+bitgen -intstyle ise -f seven_bit_adder_sub.ut seven_bit_adder_sub.ncd 
+xst -intstyle ise -ifn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.xst" -ofn "/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seven_bit_adder_sub.ucf -p xc3s500e-fg320-4 seven_bit_adder_sub.ngc seven_bit_adder_sub.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o seven_bit_adder_sub_map.ncd seven_bit_adder_sub.ngd seven_bit_adder_sub.pcf 
+par -w -intstyle ise -ol high -t 1 seven_bit_adder_sub_map.ncd seven_bit_adder_sub.ncd seven_bit_adder_sub.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seven_bit_adder_sub.twx seven_bit_adder_sub.ncd -o seven_bit_adder_sub.twr seven_bit_adder_sub.pcf -ucf seven_bit_adder_sub.ucf 
+bitgen -intstyle ise -f seven_bit_adder_sub.ut seven_bit_adder_sub.ncd 

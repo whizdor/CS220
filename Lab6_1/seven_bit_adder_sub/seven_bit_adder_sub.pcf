@@ -1,0 +1,23 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed Feb 28 15:14:08 2024
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "ROT_A" LOCATE = SITE "K18" LEVEL 1;
+COMP "ROT_B" LOCATE = SITE "G18" LEVEL 1;
+COMP "clk" LOCATE = SITE "C9" LEVEL 1;
+COMP "overflow" LOCATE = SITE "F9" LEVEL 1;
+COMP "inp<0>" LOCATE = SITE "L13" LEVEL 1;
+COMP "inp<1>" LOCATE = SITE "L14" LEVEL 1;
+COMP "inp<2>" LOCATE = SITE "H18" LEVEL 1;
+COMP "inp<3>" LOCATE = SITE "N17" LEVEL 1;
+COMP "answer<0>" LOCATE = SITE "F12" LEVEL 1;
+COMP "answer<1>" LOCATE = SITE "E12" LEVEL 1;
+COMP "answer<2>" LOCATE = SITE "E11" LEVEL 1;
+COMP "answer<3>" LOCATE = SITE "F11" LEVEL 1;
+COMP "answer<4>" LOCATE = SITE "C11" LEVEL 1;
+COMP "answer<5>" LOCATE = SITE "D11" LEVEL 1;
+COMP "answer<6>" LOCATE = SITE "E9" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+

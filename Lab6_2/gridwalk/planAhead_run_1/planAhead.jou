@@ -1,0 +1,71 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Mar  6 14:51:04 2024
+# Process ID: 10179
+# Log file: /users/btech/aditikh22/gridwalk/planAhead_run_1/planAhead.log
+# Journal file: /users/btech/aditikh22/gridwalk/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /users/btech/aditikh22/gridwalk/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin F12 [get_ports {x[0]}]
+endgroup
+startgroup
+set_property package_pin E12 [get_ports {x[1]}]
+endgroup
+startgroup
+set_property package_pin E11 [get_ports {x[2]}]
+endgroup
+startgroup
+set_property package_pin F11 [get_ports {x[3]}]
+endgroup
+startgroup
+set_property package_pin C11 [get_ports {y[0]}]
+endgroup
+startgroup
+set_property package_pin D11 [get_ports {y[1]}]
+endgroup
+startgroup
+set_property package_pin E9 [get_ports {y[2]}]
+endgroup
+startgroup
+set_property package_pin F9 [get_ports {y[3]}]
+endgroup
+set_property drive 8 [get_ports [list {x[3]} {x[2]} {x[1]} {x[0]}]]
+set_property drive 8 [get_ports [list {y[3]} {y[2]} {y[1]} {y[0]}]]
+set_property iostandard LVTTL [get_ports [list {x[3]} {x[2]} {x[1]} {x[0]}]]
+set_property iostandard LVTTL [get_ports [list {y[3]} {y[2]} {y[1]} {y[0]}]]
+startgroup
+set_property package_pin L13 [get_ports {z[0]}]
+endgroup
+startgroup
+set_property package_pin L14 [get_ports {z[1]}]
+endgroup
+startgroup
+set_property package_pin H18 [get_ports {z[2]}]
+endgroup
+startgroup
+set_property package_pin N17 [get_ports {z[3]}]
+endgroup
+set_property iostandard LVTTL [get_ports [list {z[3]} {z[2]} {z[1]} {z[0]}]]
+set_property pulltype PULLUP [get_ports [list {z[3]} {z[2]} {z[1]} {z[0]}]]
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+startgroup
+set_property package_pin A11 [get_ports ROT_B]
+endgroup
+startgroup
+set_property package_pin K18 [get_ports ROT_A]
+endgroup
+startgroup
+set_property package_pin G18 [get_ports ROT_B]
+endgroup
+set_property iostandard LVTTL [get_ports [list ROT_A]]
+set_property pulltype PULLUP [get_ports [list ROT_A]]
+set_property iostandard LVTTL [get_ports [list ROT_B]]
+set_property pulltype PULLUP [get_ports [list ROT_B]]
+save_constraints

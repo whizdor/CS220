@@ -1,3 +1,23 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    14:47:56 03/06/2024 
+// Design Name: 
+// Module Name:    grid 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module grid(clk, ROT_A, ROT_B, z, x, y);
     input clk, ROT_A, ROT_B;
     input [3:0] z;
@@ -16,14 +36,6 @@ module grid(clk, ROT_A, ROT_B, z, x, y);
     wire rotation_event;
     reg prev_rotation_event = 1;
     rotary_shaft RS(clk, ROT_A, ROT_B, rotation_event);
-
-    always@(posedge clk) begin
-        if(prev_rotation_event == 0 && rotation_event == 1) begin
-            num <= z;
-            change <= 1;
-        end
-        prev_rotation_event <= rotation_event;
-    end
 
 
     always@(posedge clk) begin
@@ -66,7 +78,13 @@ module grid(clk, ROT_A, ROT_B, z, x, y);
             end
             change <= 0;
         end
+		  	if(prev_rotation_event == 0 && rotation_event == 1) begin
+            num <= z;
+            change <= 1;
+        end
+		  prev_rotation_event <= rotation_event;
+		
     end
 
-    five_bit_adder FBA(x, y, num, sum_x, sum_y);
+    five_bit FB(x, y, num, sum_x, sum_y);
 endmodule

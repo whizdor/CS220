@@ -1,0 +1,3 @@
+verilog work "rotary_shaft.v"
+verilog work "full_operator.v"
+verilog work "seven_bit_adder_sub.v"

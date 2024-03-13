@@ -18,188 +18,183 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
+module lcd_driver(
+	first_line,
+	second_line,
+	clk,
+	lcd_rs,
+	lcd_rw,
+	lcd_e,
+	lcd4,
+	lcd5,
+	lcd6,
+	lcd7
+    );
 
-module LCD_Driver( clk, first_line, second_line, LCD_E, LCD_W, LCD_RS, data);
-
-	//Input
+	input [0:127] first_line;
+	input [0:127] second_line;
 	input clk;
-	input [127:0]first_line,second_line;
+	output lcd_rs, lcd_rw, lcd_e, lcd4, lcd5, lcd6, lcd7;
+	reg lcd_rs, lcd_rw, lcd_e, lcd4, lcd5, lcd6, lcd7;
 
-	//Output
-	output wire LCD_E, LCD_W, LCD_RS;
-	output wire [3:0] data;
-
-
-	//Internal Variables
-	reg [32:0] counter;
-	reg [2:0] state;
-	reg LCD_E_r, LCD_W_r, LCD_RS_r;
-	reg [3:0] data_r;
-	reg [1:0] steps;
-	reg [7:0] ROM_index, first_line_index, line_break_index, second_line_index;
-	wire[55:0] init_ROM;
-	wire[7:0] line_break_ROM;
-	assign init_ROM = 56'h333228060C0180;
-	assign line_break_ROM = 8'hC0;
-
-	initial 
-	begin
-		steps = 0;
-		state = 0;
-		counter = 0;
-		LCD_E_r = 0;
-		LCD_W_r = 0;
-		LCD_RS_r = 0;
-		ROM_index = 55; 
-		first_line_index = 127;
-		second_line_index = 127; 
-		line_break_index = 7;
+	reg [7:0] first_line_index = 0;
+	reg [1:0] first_line_state = 3;
+	 
+	reg [7:0] second_line_index = 0;
+	reg [1:0] second_line_state = 3;
+	 
+	reg [19:0] counter = 1_000_000;
+	reg [2:0] next_state = 0;
+	 
+	reg [2:0] line_break_state = 7;
+	 
+	reg [5:0] init_ROM [0:13];
+	reg [3:0] init_ROM_index = 0;
+	 
+	// Initialization code
+	initial begin
+		init_ROM[0] = 6'h03;
+		init_ROM[1] = 6'h03;
+		init_ROM[2] = 6'h03;
+		init_ROM[3] = 6'h02;
+		init_ROM[4] = 6'h02;
+		init_ROM[5] = 6'h08;
+		init_ROM[6] = 6'h00;
+		init_ROM[7] = 6'h06;
+		init_ROM[8] = 6'h00;
+		init_ROM[9] = 6'h0c;
+		init_ROM[10] = 6'h00;
+		init_ROM[11] = 6'h01;
+		init_ROM[12] = 6'h08;
+		init_ROM[13] = 6'h00;
 	end
-
-
-
-	always @(posedge clk)
-	begin
-		counter = counter + 1;
-
-		//Initialize and Configure the LED
-		if(state == 0 && counter == 1000000)
-		begin
-			if(steps == 0)
-			begin
-				LCD_E_r = 0;
-				steps = steps + 1;
-			end
-
-			else if(steps == 1)
-			begin
-				data_r[3] = init_ROM[ROM_index];
-				data_r[2] = init_ROM[ROM_index-1];
-				data_r[1] = init_ROM[ROM_index-2];
-				data_r[0] = init_ROM[ROM_index-3];
-				steps = steps + 1;	
-			end
-
-			else if(steps == 3)
-			begin
-				
-				if (ROM_index == 3)
-				begin
-					state = 3'b001;
-					steps = 0;
-				end
-				LCD_E_r = 1;
-				steps = 0;
-				ROM_index = ROM_index - 4;
-			end
-			counter = 0;
-		end
-
-		//First Line of LCD
-		else if(state == 1 && counter == 1000000)
-		begin	
-			if(steps == 0)
-			begin
-				LCD_E_r = 0;
-				steps = steps + 1;
-			end
-
-			else if(steps == 1)
-			begin
-				LCD_RS_r = 1;
-				LCD_W_r = 0;
-				data_r[3] = first_line[first_line_index];
-				data_r[2] = first_line[first_line_index-1];
-				data_r[1] = first_line[first_line_index-2];
-				data_r[0] = first_line[first_line_index-3];
-				steps = steps + 1;
-			end
-
-			else if(steps == 2)
-			begin
-				if (first_line_index ==3)
-				begin
-					state = 3'b010;
-					steps = 0;
-				end
-				LCD_E_r = 1;
-				steps = 0;
-				first_line_index = first_line_index - 4;
-			end
-			counter = 0;
-		end
-
-		//Line Break
-		else if(state == 2 && counter == 1000000)
-		begin
+	
+	always @ (posedge clk) begin
+	   	if (counter == 0) begin
+		   	counter <= 1_000_000;
 			
-			if(steps == 0)
-			begin
-				LCD_E_r = 0;
-				steps = steps + 1;
+			// Initialization state machine
+			if (init_ROM_index == 14) begin
+				next_state <= 4;
+				init_ROM_index <= 0;
+				first_line_state <= 0;
 			end
-
-			else if(steps == 1)
-			begin
-				LCD_RS_r = 0;
-				LCD_W_r = 0;
-				data_r[3] = line_break_ROM[line_break_index];
-				data_r[2] = line_break_ROM[line_break_index-1];
-				data_r[1] = line_break_ROM[line_break_index-2];
-				data_r[0] = line_break_ROM[line_break_index-3];
-				steps = steps + 1;
+					
+			if ((next_state != 4) && (init_ROM_index != 14)) begin
+			  	case (next_state)
+			    		0: begin
+						lcd_e <= 0;
+						next_state <= 1;
+               		    		end
+					
+                            		1: begin
+						{lcd_rs, lcd_rw, lcd7, lcd6, lcd5, lcd4} <= init_ROM[init_ROM_index];
+						next_state <= 2;
+			    		end
+					
+			    		2: begin
+						lcd_e <= 1;
+						next_state <= 3;
+			    		end
+					
+			    		3: begin
+						lcd_e <= 0;
+						next_state <= 1;
+						init_ROM_index <= init_ROM_index + 1;
+			    		end
+			  	endcase
 			end
-
-			else if(steps == 2)
-			begin
-				if (line_break_index ==3)
-				begin
-					state = 3;
-					steps = 0;
-				end
-				LCD_E_r = 1;
-				steps = 0;
-				line_break_index = line_break_index-4;
+			
+			// First line state machine
+			if (first_line_index == 128) begin
+				first_line_state <= 3;
+				first_line_index <= 0;
+				line_break_state <= 0;
 			end
-			counter = 0;
+			if ((first_line_state != 3) && (first_line_index != 128)) begin
+				case (first_line_state)
+					0: begin
+						{lcd_rs, lcd_rw, lcd7, lcd6, lcd5, lcd4} <= {2'h2,first_line[first_line_index],first_line[first_line_index+1],first_line[first_line_index+2],first_line[first_line_index+3]};
+						first_line_state <= 1;
+					end
+						
+					1: begin
+						lcd_e <= 1;
+						first_line_state <= 2;
+					end
+					
+					2: begin
+						lcd_e <= 0;
+						first_line_state <= 0;
+						first_line_index <= first_line_index+4;
+					end
+				endcase
+			end
+			
+			// Line break state machine
+			if (line_break_state != 7) begin
+				case (line_break_state)
+					0: begin
+						{lcd_rs, lcd_rw, lcd7, lcd6, lcd5, lcd4} <= 6'h0c;
+						line_break_state <= 1;
+					end
+						
+					1: begin
+						lcd_e <= 1;
+						line_break_state <= 2;
+					end
+						
+					2: begin
+						lcd_e <= 0;
+						line_break_state <= 3;
+					end
+						
+					3: begin
+						{lcd_rs, lcd_rw, lcd7, lcd6, lcd5, lcd4} <= 6'h00;
+						line_break_state <= 4;
+					end
+						
+					4: begin
+						lcd_e <= 1;
+						line_break_state <= 5;
+					end
+						
+					5: begin
+						lcd_e <= 0;
+						line_break_state <= 7;
+						second_line_state <= 0;
+					end
+				endcase
+			end
+			
+			// Second line state machine
+			if (second_line_index == 128) begin
+				second_line_state <= 3;
+				second_line_index <= 0;
+			end
+			if ((second_line_state != 3) && (second_line_index != 128)) begin
+				case (second_line_state)
+					0: begin
+						{lcd_rs, lcd_rw, lcd7, lcd6, lcd5, lcd4} <= {2'h2,second_line[second_line_index],second_line[second_line_index+1],second_line[second_line_index+2],second_line[second_line_index+3]};
+						second_line_state <= 1;
+					end
+						
+					1: begin
+						lcd_e <= 1;
+						second_line_state <= 2;
+					end
+					
+					2: begin
+						lcd_e <= 0;
+						second_line_state <= 0;
+						second_line_index <= second_line_index+4;
+					end
+				endcase
+			end
 		end
-
-		//Second Line of LCD
-		else if(state == 3 && counter == 1000000)
-		begin
-			if(steps == 0)
-			begin
-				LCD_E_r=0;
-				steps = steps + 1;
-			end
-
-			else if(steps == 1)
-			begin
-				LCD_RS_r = 1;
-				LCD_W_r = 0;
-				data_r[3] = second_line[second_line_index];
-				data_r[2] = second_line[second_line_index-1];
-				data_r[1] = second_line[second_line_index-2];
-				data_r[0] = second_line[second_line_index-3];
-				steps = steps + 1;	
-			end
-
-			else if(steps == 2)
-			begin
-				if (second_line_index ==3)
-				begin
-					state = 4;
-				end
-				LCD_E_r = 1;
-				steps = 0;
-				second_line_index = second_line_index - 4;
-			end
-			counter = 0;
-		end	
+		else 
+		begin 
+		   	counter <= counter - 1;
+		end
 	end
-
-	assign data[3:0] = data_r[3:0];
-	assign LCD_E = LCD_E_r;
-	assign LCD_W = LCD_W_r;
-	assign LCD_RS = LCD_RS_r; 
 endmodule

@@ -1,0 +1,4 @@
+verilog work "full_operator.v"
+verilog work "rotary_shft.v"
+verilog work "five_bit_adder_subtractor.v"
+verilog work "grid.v"

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.ncd
+OUTFILE=/users/btech/aditikh22/seven_bit_adder_sub/seven_bit_adder_sub.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/users/btech/aditikh22/seven_bit_adder_sub
+LICENSE=WebPack
+USER_INFO=212889031_0_0_039

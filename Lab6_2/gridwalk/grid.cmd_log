@@ -1,0 +1,38 @@
+xst -intstyle ise -ifn "/users/btech/aditikh22/gridwalk/grid.xst" -ofn "/users/btech/aditikh22/gridwalk/grid.syr" 
+xst -intstyle ise -ifn "/users/btech/aditikh22/gridwalk/grid.xst" -ofn "/users/btech/aditikh22/gridwalk/grid.syr" 
+xst -intstyle ise -ifn "/users/btech/aditikh22/gridwalk/grid.xst" -ofn "/users/btech/aditikh22/gridwalk/grid.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc grid.ucf -p xc3s500e-fg320-4 grid.ngc grid.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o grid_map.ncd grid.ngd grid.pcf 
+par -w -intstyle ise -ol high -t 1 grid_map.ncd grid.ncd grid.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml grid.twx grid.ncd -o grid.twr grid.pcf -ucf grid.ucf 
+bitgen -intstyle ise -f grid.ut grid.ncd 
+xst -intstyle ise -ifn "/users/btech/aditikh22/gridwalk/grid.xst" -ofn "/users/btech/aditikh22/gridwalk/grid.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc grid.ucf -p xc3s500e-fg320-4 grid.ngc grid.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o grid_map.ncd grid.ngd grid.pcf 
+par -w -intstyle ise -ol high -t 1 grid_map.ncd grid.ncd grid.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml grid.twx grid.ncd -o grid.twr grid.pcf -ucf grid.ucf 
+bitgen -intstyle ise -f grid.ut grid.ncd 
+xst -intstyle ise -ifn "/users/btech/aditikh22/gridwalk/grid.xst" -ofn "/users/btech/aditikh22/gridwalk/grid.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc grid.ucf -p xc3s500e-fg320-4 grid.ngc grid.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o grid_map.ncd grid.ngd grid.pcf 
+par -w -intstyle ise -ol high -t 1 grid_map.ncd grid.ncd grid.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml grid.twx grid.ncd -o grid.twr grid.pcf -ucf grid.ucf 
+bitgen -intstyle ise -f grid.ut grid.ncd 
+xst -intstyle ise -ifn "/users/btech/aditikh22/gridwalk/grid.xst" -ofn "/users/btech/aditikh22/gridwalk/grid.syr" 
+xst -intstyle ise -ifn "/users/btech/aditikh22/gridwalk/grid.xst" -ofn "/users/btech/aditikh22/gridwalk/grid.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc grid.ucf -p xc3s500e-fg320-4 grid.ngc grid.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o grid_map.ncd grid.ngd grid.pcf 
+par -w -intstyle ise -ol high -t 1 grid_map.ncd grid.ncd grid.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml grid.twx grid.ncd -o grid.twr grid.pcf -ucf grid.ucf 
+bitgen -intstyle ise -f grid.ut grid.ncd 
+xst -intstyle ise -ifn "/users/btech/aditikh22/gridwalk/grid.xst" -ofn "/users/btech/aditikh22/gridwalk/grid.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc grid.ucf -p xc3s500e-fg320-4 grid.ngc grid.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o grid_map.ncd grid.ngd grid.pcf 
+par -w -intstyle ise -ol high -t 1 grid_map.ncd grid.ncd grid.pcf 
+bitgen -intstyle ise -f grid.ut grid.ncd 
+xst -intstyle ise -ifn "/users/btech/aditikh22/gridwalk/grid.xst" -ofn "/users/btech/aditikh22/gridwalk/grid.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc grid.ucf -p xc3s500e-fg320-4 grid.ngc grid.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o grid_map.ncd grid.ngd grid.pcf 
+par -w -intstyle ise -ol high -t 1 grid_map.ncd grid.ncd grid.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml grid.twx grid.ncd -o grid.twr grid.pcf -ucf grid.ucf 
+bitgen -intstyle ise -f grid.ut grid.ncd 
