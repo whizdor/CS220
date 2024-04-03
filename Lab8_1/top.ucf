@@ -1,0 +1,92 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "LCD_E" LOC = M18;
+NET "LCD_RS" LOC = L18;
+NET "LCD_RW" LOC = L17;
+
+# PlanAhead Generated IO constraints 
+
+NET "LCD_E" IOSTANDARD = LVCMOS33;
+NET "LCD_RS" IOSTANDARD = LVCMOS33;
+NET "LCD_RW" IOSTANDARD = LVCMOS33;
+NET "LCD_E" DRIVE = 4;
+NET "LCD_RS" DRIVE = 4;
+NET "LCD_RW" DRIVE = 4;
+
+# PlanAhead Generated physical constraints 
+
+NET "clk" LOC = C9;
+
+# PlanAhead Generated IO constraints 
+
+NET "clk" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "PB1" LOC = V4;
+
+# PlanAhead Generated IO constraints 
+
+NET "PB1" IOSTANDARD = LVTTL;
+NET "PB1" PULLDOWN;
+
+# PlanAhead Generated physical constraints 
+
+NET "PB2" LOC = K17;
+
+# PlanAhead Generated IO constraints 
+
+NET "PB2" IOSTANDARD = LVTTL;
+NET "PB2" PULLDOWN;
+
+# PlanAhead Generated physical constraints 
+
+NET "ROT_A" LOC = K18;
+
+# PlanAhead Generated IO constraints 
+
+NET "ROT_A" IOSTANDARD = LVTTL;
+NET "ROT_A" PULLUP;
+NET "ROT_B" PULLUP;
+NET "ROT_B" IOSTANDARD = LVTTL;
+
+# PlanAhead Generated physical constraints 
+
+NET "ROT_B" LOC = G18;
+NET "input[3]" LOC = N17;
+NET "input[2]" LOC = H18;
+NET "input[1]" LOC = L14;
+NET "input[0]" LOC = L13;
+
+# PlanAhead Generated IO constraints 
+
+NET "input[3]" IOSTANDARD = LVTTL;
+NET "input[3]" PULLUP;
+NET "input[2]" PULLUP;
+NET "input[1]" PULLUP;
+NET "input[0]" PULLUP;
+NET "input[2]" IOSTANDARD = LVTTL;
+NET "input[1]" IOSTANDARD = LVTTL;
+NET "input[0]" IOSTANDARD = LVTTL;
+
+# PlanAhead Generated physical constraints 
+
+NET "data[0]" LOC = R15;
+NET "data[1]" LOC = R16;
+NET "data[2]" LOC = P17;
+NET "data[3]" LOC = M15;
+
+# PlanAhead Generated IO constraints 
+
+NET "data[3]" IOSTANDARD = LVCMOS33;
+NET "data[2]" IOSTANDARD = LVCMOS33;
+NET "data[1]" IOSTANDARD = LVCMOS33;
+NET "data[0]" IOSTANDARD = LVCMOS33;
+NET "data[3]" DRIVE = 4;
+NET "data[2]" DRIVE = 4;
+NET "data[1]" DRIVE = 4;
+NET "data[0]" DRIVE = 4;
+
+NET "PB1" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "PB2" CLOCK_DEDICATED_ROUTE = FALSE;

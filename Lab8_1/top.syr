@@ -1,0 +1,764 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "onebitcomp.v" in library work
+Compiling verilog file "rotary.v" in library work
+Module <onebitcomp> compiled
+Compiling verilog file "eight_bit_comparator.v" in library work
+Module <rotary> compiled
+Compiling verilog file "display.v" in library work
+Module <eight_bit_comparator> compiled
+Compiling verilog file "top.v" in library work
+Module <display> compiled
+Module <top> compiled
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work>.
+
+Analyzing hierarchy for module <eight_bit_comparator> in library <work>.
+
+Analyzing hierarchy for module <rotary> in library <work>.
+
+Analyzing hierarchy for module <display> in library <work>.
+
+Analyzing hierarchy for module <onebitcomp> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+Module <top> is correct for synthesis.
+ 
+Analyzing module <eight_bit_comparator> in library <work>.
+Module <eight_bit_comparator> is correct for synthesis.
+ 
+Analyzing module <onebitcomp> in library <work>.
+Module <onebitcomp> is correct for synthesis.
+ 
+Analyzing module <rotary> in library <work>.
+Module <rotary> is correct for synthesis.
+ 
+Analyzing module <display> in library <work>.
+Module <display> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <rotary>.
+    Related source file is "rotary.v".
+    Found 1-bit register for signal <rot_event>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <rotary> synthesized.
+
+
+Synthesizing Unit <display>.
+    Related source file is "display.v".
+WARNING:Xst:1781 - Signal <ROM> is used but never assigned. Tied to default value.
+    Found finite state machine <FSM_0> for signal <state1>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 30                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | state1$not0000            (positive)           |
+    | Reset              | display_start             (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 11                                             |
+    | Power Up State     | 11                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <state2>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 35                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | state2$not0000            (positive)           |
+    | Reset              | display_start             (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 11                                             |
+    | Power Up State     | 11                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_2> for signal <next_state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 21                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 9                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | next_state$not0000        (positive)           |
+    | Reset              | display_start             (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_3> for signal <line_break_state>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 22                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 13                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | line_break_state$not0000  (positive)           |
+    | Reset              | display_start             (negative)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 111                                            |
+    | Power Up State     | 111                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 14x6-bit ROM for signal <$AUX_111>.
+    Found 1-bit register for signal <data0>.
+    Found 1-bit register for signal <data1>.
+    Found 1-bit register for signal <data2>.
+    Found 1-bit register for signal <LCD_E>.
+    Found 1-bit register for signal <data3>.
+    Found 1-bit register for signal <LCD_W>.
+    Found 1-bit register for signal <LCD_RS>.
+    Found 1-bit register for signal <display_end>.
+    Found 32-bit down counter for signal <counter>.
+    Found 8-bit register for signal <index1>.
+    Found 8-bit adder for signal <index1$addsub0000> created at line 143.
+    Found 8-bit register for signal <index2>.
+    Found 8-bit adder for signal <index2$addsub0000> created at line 209.
+    Found 4-bit register for signal <ROM_index>.
+    Found 4-bit adder for signal <ROM_index$addsub0000> created at line 113.
+    Summary:
+	inferred   4 Finite State Machine(s).
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred  28 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   8 Multiplexer(s).
+Unit <display> synthesized.
+
+
+Synthesizing Unit <onebitcomp>.
+    Related source file is "onebitcomp.v".
+    Found 1-bit xor2 for signal <equal$xor0000> created at line 26.
+Unit <onebitcomp> synthesized.
+
+
+Synthesizing Unit <eight_bit_comparator>.
+    Related source file is "eight_bit_comparator.v".
+WARNING:Xst:646 - Signal <greater> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <equal> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <eight_bit_comparator> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "top.v".
+WARNING:Xst:1781 - Signal <deci<0:1>> is used but never assigned. Tied to default value.
+WARNING:Xst:1780 - Signal <deci<2:9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Using one-hot encoding for signal <$old_count_1>.
+    Found 4-bit register for signal <bit_shift>.
+    Found 3-bit register for signal <cmd>.
+    Found 13-bit register for signal <count>.
+    Found 1-bit register for signal <display_start>.
+    Found 128-bit register for signal <first_line>.
+    Found 128-bit 8-to-1 multiplexer for signal <first_line$mux0000>.
+    Found 128-bit 4-to-1 multiplexer for signal <first_line$mux0001>.
+    Found 128-bit 4-to-1 multiplexer for signal <first_line$mux0002>.
+    Found 128-bit 4-to-1 multiplexer for signal <first_line$mux0003>.
+    Found 128-bit 4-to-1 multiplexer for signal <first_line$mux0004>.
+    Found 128-bit 4-to-1 multiplexer for signal <first_line$mux0005>.
+    Found 128-bit 4-to-1 multiplexer for signal <first_line$mux0006>.
+    Found 1-bit register for signal <flag>.
+    Found 1-bit register for signal <input_done>.
+    Found 1-bit 8-to-1 multiplexer for signal <input_done$mux0000>.
+    Found 1-bit register for signal <prev_rot_event>.
+    Found 5-bit register for signal <read_addr1>.
+    Found 1-bit 8-to-1 multiplexer for signal <read_addr1_0$mux0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <read_addr1_1$mux0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <read_addr1_2$mux0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <read_addr1_3$mux0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <read_addr1_4$mux0000>.
+    Found 5-bit register for signal <read_addr2>.
+    Found 1-bit 8-to-1 multiplexer for signal <read_addr2_0$mux0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <read_addr2_1$mux0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <read_addr2_2$mux0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <read_addr2_3$mux0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <read_addr2_4$mux0000>.
+    Found 512-bit register for signal <reg_file>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_0$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_1$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_10$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_11$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_12$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_13$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_14$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_15$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_16$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_17$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_18$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_19$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_2$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_20$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_21$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_22$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_23$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_24$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_25$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_26$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_27$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_28$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_29$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_3$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_30$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_31$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_4$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_5$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_6$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_7$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_8$mux0000>.
+    Found 16-bit 8-to-1 multiplexer for signal <reg_file_9$mux0000>.
+    Found 128-bit register for signal <second_line>.
+    Found 128-bit 8-to-1 multiplexer for signal <second_line$mux0000>.
+    Found 128-bit 4-to-1 multiplexer for signal <second_line$mux0001>.
+    Found 128-bit 4-to-1 multiplexer for signal <second_line$mux0002>.
+    Found 128-bit 4-to-1 multiplexer for signal <second_line$mux0003>.
+    Found 128-bit 4-to-1 multiplexer for signal <second_line$mux0004>.
+    Found 128-bit 4-to-1 multiplexer for signal <second_line$mux0005>.
+    Found 128-bit 4-to-1 multiplexer for signal <second_line$mux0006>.
+    Found 128-bit 4-to-1 multiplexer for signal <second_line$mux0007>.
+    Found 16-bit shifter logical right for signal <shift>.
+    Found 16-bit xor2 for signal <sub>.
+    Found 5-bit register for signal <write_addr>.
+    Found 1-bit 8-to-1 multiplexer for signal <write_addr_0$mux0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <write_addr_1$mux0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <write_addr_2$mux0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <write_addr_3$mux0000>.
+    Found 1-bit 8-to-1 multiplexer for signal <write_addr_4$mux0000>.
+    Found 16-bit register for signal <write_data>.
+INFO:Xst:738 - HDL ADVISOR - 512 flip-flops were inferred for signal <reg_file>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred 823 D-type flip-flop(s).
+	inferred 2480 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
+Unit <top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 14x6-bit ROM                                          : 1
+# Adders/Subtractors                                   : 3
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 2
+# Counters                                             : 1
+ 32-bit down counter                                   : 1
+# Registers                                            : 84
+ 1-bit register                                        : 44
+ 128-bit register                                      : 2
+ 13-bit register                                       : 1
+ 16-bit register                                       : 32
+ 3-bit register                                        : 1
+ 4-bit register                                        : 2
+ 8-bit register                                        : 2
+# Multiplexers                                         : 73
+ 1-bit 125-to-1 multiplexer                            : 2
+ 1-bit 126-to-1 multiplexer                            : 2
+ 1-bit 127-to-1 multiplexer                            : 2
+ 1-bit 128-to-1 multiplexer                            : 2
+ 1-bit 8-to-1 multiplexer                              : 16
+ 128-bit 4-to-1 multiplexer                            : 13
+ 128-bit 8-to-1 multiplexer                            : 2
+ 16-bit 32-to-1 multiplexer                            : 2
+ 16-bit 8-to-1 multiplexer                             : 32
+# Logic shifters                                       : 1
+ 16-bit shifter logical right                          : 1
+# Xors                                                 : 17
+ 1-bit xor2                                            : 16
+ 16-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_3> for best encoding.
+Optimizing FSM <uut2/line_break_state/FSM> on signal <line_break_state[1:7]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 0000010
+ 001   | 0000100
+ 010   | 0001000
+ 011   | 0010000
+ 100   | 0100000
+ 101   | 1000000
+ 111   | 0000001
+-------------------
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <uut2/next_state/FSM> on signal <next_state[1:5]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00001
+ 001   | 00100
+ 010   | 01000
+ 011   | 10000
+ 100   | 00010
+-------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <uut2/state2/FSM> on signal <state2[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <uut2/state1/FSM> on signal <state1[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
+-------------------
+
+Synthesizing (advanced) Unit <display>.
+INFO:Xst:3021 - HDL ADVISOR - Asynchronous or synchronous initialization of the register <ROM_index> prevents it from being combined with the ROM <Mrom__AUX_111> for implementation as read-only block RAM.
+Unit <display> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 4
+# ROMs                                                 : 1
+ 14x6-bit ROM                                          : 1
+# Adders/Subtractors                                   : 3
+ 4-bit adder                                           : 1
+ 8-bit adder                                           : 2
+# Counters                                             : 1
+ 32-bit down counter                                   : 1
+# Registers                                            : 852
+ Flip-Flops                                            : 852
+# Multiplexers                                         : 73
+ 1-bit 125-to-1 multiplexer                            : 2
+ 1-bit 126-to-1 multiplexer                            : 2
+ 1-bit 127-to-1 multiplexer                            : 2
+ 1-bit 128-to-1 multiplexer                            : 2
+ 1-bit 8-to-1 multiplexer                              : 16
+ 128-bit 4-to-1 multiplexer                            : 13
+ 128-bit 8-to-1 multiplexer                            : 2
+ 16-bit 32-to-1 multiplexer                            : 2
+ 16-bit 8-to-1 multiplexer                             : 32
+# Logic shifters                                       : 1
+ 16-bit shifter logical right                          : 1
+# Xors                                                 : 17
+ 1-bit xor2                                            : 16
+ 16-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <LCD_W> (without init value) has a constant value of 0 in block <display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <index1_0> has a constant value of 0 in block <display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <index1_1> has a constant value of 0 in block <display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <index2_0> has a constant value of 0 in block <display>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <index2_1> has a constant value of 0 in block <display>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <top> ...
+
+Optimizing unit <display> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 108.
+Optimizing block <top> to meet ratio 100 (+ 5) of 4656 slices :
+Area constraint is met for block <top>, final ratio is 92.
+FlipFlop cmd_0 has been replicated 6 time(s)
+FlipFlop cmd_1 has been replicated 3 time(s)
+FlipFlop cmd_2 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 905
+ Flip-Flops                                            : 905
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 16
+
+Cell Usage :
+# BELS                             : 12268
+#      GND                         : 1
+#      INV                         : 32
+#      LUT1                        : 497
+#      LUT2                        : 887
+#      LUT2_D                      : 22
+#      LUT2_L                      : 4
+#      LUT3                        : 2406
+#      LUT3_D                      : 20
+#      LUT3_L                      : 5
+#      LUT4                        : 4257
+#      LUT4_D                      : 385
+#      LUT4_L                      : 20
+#      MUXCY                       : 39
+#      MUXF5                       : 2423
+#      MUXF6                       : 1037
+#      MUXF7                       : 140
+#      MUXF8                       : 60
+#      VCC                         : 1
+#      XORCY                       : 32
+# FlipFlops/Latches                : 905
+#      FD                          : 19
+#      FDE                         : 811
+#      FDR                         : 27
+#      FDRE                        : 27
+#      FDS                         : 14
+#      FDSE                        : 7
+# Clock Buffers                    : 3
+#      BUFGP                       : 3
+# IO Buffers                       : 13
+#      IBUF                        : 6
+#      OBUF                        : 7
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                     4485  out of   4656    96%  
+ Number of Slice Flip Flops:            905  out of   9312     9%  
+ Number of 4 input LUTs:               8535  out of   9312    91%  
+ Number of IOs:                          16
+ Number of bonded IOBs:                  16  out of    232     6%  
+ Number of GCLKs:                         3  out of     24    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+PB1                                | BUFGP                  | 13    |
+clk                                | BUFGP                  | 891   |
+PB2                                | BUFGP                  | 1     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 14.457ns (Maximum Frequency: 69.172MHz)
+   Minimum input arrival time before clock: 5.199ns
+   Maximum output required time after clock: 4.496ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 14.457ns (frequency: 69.172MHz)
+  Total number of paths / destination ports: 691265 / 1802
+-------------------------------------------------------------------------
+Delay:               14.457ns (Levels of Logic = 13)
+  Source:            read_addr1_0 (FF)
+  Destination:       reg_file_0_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: read_addr1_0 to reg_file_0_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q            259   0.591   1.369  read_addr1_0 (read_addr1_0)
+     LUT3:I2->O            1   0.704   0.000  Mmux__COND_108_109 (Mmux__COND_108_109)
+     MUXF5:I0->O           1   0.321   0.000  Mmux__COND_108_8_f5_8 (Mmux__COND_108_8_f59)
+     MUXF6:I0->O           1   0.521   0.000  Mmux__COND_108_6_f6_8 (Mmux__COND_108_6_f69)
+     MUXF7:I0->O           1   0.521   0.000  Mmux__COND_108_4_f7_8 (Mmux__COND_108_4_f79)
+     MUXF8:I0->O          10   0.521   0.961  Mmux__COND_108_2_f8_8 (bus1<3>)
+     LUT2_D:I1->O         33   0.704   1.267  EBC/C3/equal_xor00001 (EBC/C3/equal_xor0000)
+     LUT4_L:I3->LO         1   0.704   0.104  EBC/C0/less263_SW0_SW0 (N474)
+     LUT4:I3->O            1   0.704   0.420  EBC/C0/less263_SW0 (N416)
+     MUXF5:S->O            2   0.739   0.451  EBC/C0/less399 (EBC/C0/less399)
+     LUT4:I3->O           32   0.704   1.297  EBC/C0/less453 (add<0>)
+     LUT3:I2->O            1   0.704   0.000  Mmux_reg_file_0_mux0000_5 (Mmux_reg_file_0_mux0000_5)
+     MUXF5:I0->O           1   0.321   0.000  Mmux_reg_file_0_mux0000_3_f5 (Mmux_reg_file_0_mux0000_3_f5)
+     MUXF6:I1->O           1   0.521   0.000  Mmux_reg_file_0_mux0000_2_f6 (reg_file_0_mux0000<0>)
+     FDE:D                     0.308          reg_file_0_0
+    ----------------------------------------
+    Total                     14.457ns (8.588ns logic, 5.869ns route)
+                                       (59.4% logic, 40.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'PB2'
+  Clock period: 2.846ns (frequency: 351.370MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.846ns (Levels of Logic = 0)
+  Source:            flag (FF)
+  Destination:       flag (FF)
+  Source Clock:      PB2 rising
+  Destination Clock: PB2 rising
+
+  Data Path: flag to flag
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q            291   0.591   1.344  flag (flag)
+     FDR:R                     0.911          flag
+    ----------------------------------------
+    Total                      2.846ns (1.502ns logic, 1.344ns route)
+                                       (52.8% logic, 47.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'PB1'
+  Total number of paths / destination ports: 13 / 13
+-------------------------------------------------------------------------
+Offset:              2.690ns (Levels of Logic = 1)
+  Source:            inp<0> (PAD)
+  Destination:       cmd_0 (FF)
+  Destination Clock: PB1 rising
+
+  Data Path: inp<0> to cmd_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            22   1.218   1.164  inp_0_IBUF (inp_0_IBUF)
+     FD:D                      0.308          cmd_0
+    ----------------------------------------
+    Total                      2.690ns (1.526ns logic, 1.164ns route)
+                                       (56.7% logic, 43.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 49 / 37
+-------------------------------------------------------------------------
+Offset:              5.199ns (Levels of Logic = 5)
+  Source:            inp<0> (PAD)
+  Destination:       write_addr_1 (FF)
+  Destination Clock: clk rising
+
+  Data Path: inp<0> to write_addr_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            22   1.218   1.168  inp_0_IBUF (inp_0_IBUF)
+     LUT4:I3->O            1   0.704   0.455  write_addr_1_mux00011 (write_addr_1_mux0001)
+     LUT3:I2->O            1   0.704   0.000  Mmux_write_addr_1_mux0000_6 (Mmux_write_addr_1_mux0000_6)
+     MUXF5:I1->O           1   0.321   0.000  Mmux_write_addr_1_mux0000_5_f5 (Mmux_write_addr_1_mux0000_5_f5)
+     MUXF5:I0->O           1   0.321   0.000  cmd<2>24339_f5 (write_addr_1_mux0000)
+     FDE:D                     0.308          write_addr_1
+    ----------------------------------------
+    Total                      5.199ns (3.576ns logic, 1.623ns route)
+                                       (68.8% logic, 31.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              4.496ns (Levels of Logic = 1)
+  Source:            uut2/LCD_E (FF)
+  Destination:       LCD_E (PAD)
+  Source Clock:      clk rising
+
+  Data Path: uut2/LCD_E to LCD_E
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              5   0.591   0.633  uut2/LCD_E (uut2/LCD_E)
+     OBUF:I->O                 3.272          LCD_E_OBUF (LCD_E)
+    ----------------------------------------
+    Total                      4.496ns (3.863ns logic, 0.633ns route)
+                                       (85.9% logic, 14.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 94.00 secs
+Total CPU time to Xst completion: 92.82 secs
+ 
+--> 
+
+
+Total memory usage is 667388 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   11 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+
