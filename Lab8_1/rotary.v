@@ -19,17 +19,16 @@
 //
 
 module rotary(clk, ROT_A, ROT_B, rot_event);
-input clk, ROT_A, ROT_B;
-output rot_event;
-reg rot_event;
+	input clk, ROT_A, ROT_B;
+	output rot_event;
+	reg rot_event;
 
-always@(posedge clk) begin
-	if(ROT_A == 1 & ROT_B == 1) begin
-		rot_event <= 1;
+	always@(posedge clk) begin
+		if(ROT_A == 1 & ROT_B == 1) begin
+			rot_event <= 1;
+		end
+		else if(ROT_A == 0 & ROT_B == 0) begin
+			rot_event <= 0;
+		end
 	end
-	else if(ROT_A == 0 & ROT_B == 0) begin
-		rot_event <= 0;
-	end
-end
-
 endmodule

@@ -19,13 +19,11 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module display(first_line, second_line, display_start, clk, LCD_RS, LCD_W, LCD_E, data0, data1, data2, data3, display_end
-    );
-
-   input display_start, clk;
-   input [0:127] first_line;
+module display(first_line, second_line, display_start, clk, LCD_RS, LCD_RW, LCD_E, data0, data1, data2, data3, display_end);
+   	input display_start, clk;
+   	input [0:127] first_line;
 	input [0:127] second_line;
-	output reg LCD_RS, LCD_W, LCD_E, data0, data1, data2, data3, display_end;
+	output reg LCD_RS, LCD_RW, LCD_E, data0, data1, data2, data3, display_end;
 
 	reg [7:0] index1;
 	reg [7:0] index2;
@@ -47,8 +45,6 @@ module display(first_line, second_line, display_start, clk, LCD_RS, LCD_W, LCD_E
 		next_state = 0;
 		line_break_state = 7;
 		display_end = 0;
-	end
-	initial begin
 		ROM_index = 0;
 		ROM[0] = 6'h03;
 		ROM[1] = 6'h03;
@@ -98,7 +94,7 @@ module display(first_line, second_line, display_start, clk, LCD_RS, LCD_W, LCD_E
 							end
 				
 						1: begin
-							{LCD_RS, LCD_W, data3, data2, data1, data0} <= ROM[ROM_index];
+							{LCD_RS, LCD_RW, data3, data2, data1, data0} <= ROM[ROM_index];
 							next_state <= 2;
 							end
 				
@@ -124,7 +120,7 @@ module display(first_line, second_line, display_start, clk, LCD_RS, LCD_W, LCD_E
 				if ((state1 != 3) && (index1 != 128)) begin
 					case (state1)
 					0: begin
-						{LCD_RS, LCD_W} <= 2'h2;
+						{LCD_RS, LCD_RW} <= 2'h2;
 						data3 <= first_line[index1];
  						data2 <= first_line[index1+1];
 						data1 <= first_line[index1+2];
@@ -149,7 +145,7 @@ module display(first_line, second_line, display_start, clk, LCD_RS, LCD_W, LCD_E
 				if (line_break_state != 7) begin
 					case (line_break_state)
 					0: begin
-						{LCD_RS, LCD_W, data3, data2, data1, data0} <= 6'h0c;
+						{LCD_RS, LCD_RW, data3, data2, data1, data0} <= 6'h0c;
 						line_break_state <= 1;
 						end
 					
@@ -164,7 +160,7 @@ module display(first_line, second_line, display_start, clk, LCD_RS, LCD_W, LCD_E
 						end
 					
 					3: begin
-						{LCD_RS, LCD_W, data3, data2, data1, data0} <= 6'h00;
+						{LCD_RS, LCD_RW, data3, data2, data1, data0} <= 6'h00;
 						line_break_state <= 4;
 						end
 					
@@ -190,7 +186,7 @@ module display(first_line, second_line, display_start, clk, LCD_RS, LCD_W, LCD_E
 				if ((state2 != 3) && (index2 != 128)) begin
 					case (state2)
 					0: begin
-						{LCD_RS, LCD_W} <= 2'h2;
+						{LCD_RS, LCD_RW} <= 2'h2;
 						data3 <= second_line[index2];
  						data2 <= second_line[index2+1];
 						data1 <= second_line[index2+2];
