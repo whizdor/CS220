@@ -1,7 +1,10 @@
 `define OUTPUT_REG 8'h04
 `define MAX_PC 8'h0b
-module microprocessor(clk);
+module microprocessor(clk, data_out);
 	input clk;
+
+	output [7:0] data_out;
+	reg [7:0] data_out;
 	reg [31:0] instruction_memory [10:0];
 	reg [7:0] data_memory [2:0];
 	reg [7:0] register_file [31:0];
@@ -88,16 +91,6 @@ module microprocessor(clk);
 			begin
 				instruction = instruction_memory[pc];
 				state = state + 1;
-				//$display("Instruction: %b\n",instruction);
-				//$display("PC: %d\n",pc);
-				//$display("State: %d\n",state);
-				//$display("Register File 1 : %d\n", $signed(register_file[0]));
-				//$display("Register File 2 : %d\n", $signed(register_file[1]));
-				//$display("Register File 3 : %d\n", $signed(register_file[2]));
-				//$display("Register File 4 : %d\n", $signed(register_file[3]));
-				//$display("Register File 5 : %d\n", $signed(register_file[4]));
-				//$display("Register File 6 : %d\n", $signed(register_file[5]));
-				//$display("Register File 7 : %d\n", $signed(register_file[6]));
 			end
 			1 : 
 			begin
@@ -119,36 +112,12 @@ module microprocessor(clk);
 					end
 				endcase
 				state = state + 1;
-				//$display("State: %d\n",state);
-				//$display("rs: %d\n",rs);
-				//$display("rt: %d\n",rt);
-				//$display("rd: %d\n",rd);
-				//$display("shift: %d\n",shift);
-				//$display("function_field: %d\n",function_field);
-				//$display("immediate: %d\n",immediate);
-				//$display("Register File 1 : %d\n", $signed(register_file[0]));
-				//$display("Register File 2 : %d\n", $signed(register_file[1]));
-				//$display("Register File 3 : %d\n", $signed(register_file[2]));
-				//$display("Register File 4 : %d\n", $signed(register_file[3]));
-				//$display("Register File 5 : %d\n", $signed(register_file[4]));
-				//$display("Register File 6 : %d\n", $signed(register_file[5]));
-				//$display("Register File 7 : %d\n", $signed(register_file[6]));
 			end
 			2 : 
 			begin
 				register_operand_1 = register_file[rs];
 				register_operand_2 = register_file[rt];
 				state = state + 1;
-				//$display("State: %d\n",state);
-				//$display("register operand 1: %d\n",$signed(register_operand_1));
-				//$display("register operand 2: %d\n",$signed(register_operand_2));
-				//$display("Register File 1 : %d\n", $signed(register_file[0]));
-				//$display("Register File 2 : %d\n", $signed(register_file[1]));
-				//$display("Register File 3 : %d\n", $signed(register_file[2]));
-				//$display("Register File 4 : %d\n", $signed(register_file[3]));
-				//$display("Register File 5 : %d\n", $signed(register_file[4]));
-				//$display("Register File 6 : %d\n", $signed(register_file[5]));
-				//$display("Register File 7 : %d\n", $signed(register_file[6]));
 			end
 			3 :
 			begin
@@ -157,7 +126,6 @@ module microprocessor(clk);
 							case(function_field)
 								6'h2a : begin
 									register_file[rd] = $signed(register_operand_1) < $signed(register_operand_2) ? 8'b00000001 : 8'b00000000;
-									//$display("Less than %d, %d\n",$signed(register_operand_1),$signed(register_operand_2));
 								end
 								6'h21 : begin
 									register_file[rd] = register_operand_1 + register_operand_2;
@@ -180,9 +148,6 @@ module microprocessor(clk);
 					6'h04 : begin
 						if(register_operand_1 == register_operand_2) begin
 							pc = pc + immediate;
-							//$display("PC: %d\n",pc);
-							//$display("Register Operand 1: %d\n",register_operand_1);
-							//$display("Register Operand 2: %d\n",register_operand_2);
 							$finish;
 						end
 						else begin
@@ -195,16 +160,6 @@ module microprocessor(clk);
 					end
 				endcase
 				state = state + 1;
-				//$display("State: %d\n",state);
-				//$display("PC: %d\n",pc);
-				//$display("address: %d\n",address);
-				//$display("Register File 1 : %d\n", $signed(register_file[0]));
-				//$display("Register File 2 : %d\n", $signed(register_file[1]));
-				//$display("Register File 3 : %d\n", $signed(register_file[2]));
-				//$display("Register File 4 : %d\n", $signed(register_file[3]));
-				//$display("Register File 5 : %d\n", $signed(register_file[4]));
-				//$display("Register File 6 : %d\n", $signed(register_file[5]));
-				//$display("Register File 7 : %d\n", $signed(register_file[6]));
 			end
 			4 : 
 			begin
@@ -214,22 +169,12 @@ module microprocessor(clk);
 					end
 				endcase
 				state = state + 1;
-				//$display("State: %d\n",state);
-				//$display("lw_read_data: %d\n",$signed(lw_read_data));
-				//$display("Register File 1 : %d\n", $signed(register_file[0]));
-				//$display("Register File 2 : %d\n", $signed(register_file[1]));
-				//$display("Register File 3 : %d\n", $signed(register_file[2]));
-				//$display("Register File 4 : %d\n", $signed(register_file[3]));
-				//$display("Register File 5 : %d\n", $signed(register_file[4]));
-				//$display("Register File 6 : %d\n", $signed(register_file[5]));
-				//$display("Register File 7 : %d\n", $signed(register_file[6]));
 			end
 			5 : 
 			begin
 				case(opcode)
 					6'h23 : begin
 						register_file[rt] = lw_read_data;
-						//$display("Update");
 					end
 				endcase
 				if(pc >= `MAX_PC) begin
@@ -238,29 +183,17 @@ module microprocessor(clk);
 				else begin
 					state = 0;
 				end
-				//$display("State: %d\n",state);
-				//$display("Register File 1 : %d\n", $signed(register_file[0]));
-				//$display("Register File 2 : %d\n", $signed(register_file[1]));
-				//$display("Register File 3 : %d\n", $signed(register_file[2]));
-				//$display("Register File 4 : %d\n", $signed(register_file[3]));
-				//$display("Register File 5 : %d\n", $signed(register_file[4]));
-				//$display("Register File 6 : %d\n", $signed(register_file[5]));
-				//$display("Register File 7 : %d\n", $signed(register_file[6]));
 			end
 			6 :
 			begin
-				//$display("%d",register_file[`OUTPUT_REG]);
+				$display("%d",$signed(register_file[`OUTPUT_REG]));
 				state = state + 1;
-				//$display("State: %d\n",state);
-				//$display("Register File 1 : %d\n", $signed(register_file[0]));
-				//$display("Register File 2 : %d\n", $signed(register_file[1]));
-				//$display("Register File 3 : %d\n", $signed(register_file[2]));
-				//$display("Register File 4 : %d\n", $signed(register_file[3]));
-				//$display("Register File 5 : %d\n", $signed(register_file[4]));
-				//$display("Register File 6 : %d\n", $signed(register_file[5]));
-				//$display("Register File 7 : %d\n", $signed(register_file[6]));
 			end
 		endcase
+	end
+
+	always @(posedge clk)begin
+		data_out = register_file[`OUTPUT_REG];
 	end
 
 endmodule
